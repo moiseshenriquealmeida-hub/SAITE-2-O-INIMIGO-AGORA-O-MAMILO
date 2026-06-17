@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+
+
+<html>
+    <head>
+        <title ai></title>
+        <meta charset="UTF-8">
+        <meta name="VIEW" content="width=1280 initial-scale=1.0">
+        <link href="./style.css" rel="stylesheet" type="text/css" media="all">
+    </head>
+    <body>
+        <script>
+            class Blog {
+                constructor(name, desc, text) {
+                    this.name = name
+                    this.desc = desc
+                    this.text = text
+                }
+            }
+
+
+            const Blogs = [
+                new Blog("TOP 10 GAMES", "OJIA",
+                `HOJE, EU VOU APRESENTAR TOP 10 JOGOS
+                TOP 1 : GAME GAMEPLAY .COM.BR.COM.BR.COMUNISMO
+                TOP 2 : I LOVE GAMES
+                TOP 3 : GAMES I LOVE
+                TOP 4 : LOVE THE GAMES
+                TOP 5 : L0VE THE GAYS
+                TOP 6 : LOVE
+                TOP 7 : HATE
+                TOP 8 : LOVE THE HATE
+                TOP 9 : HATE THE MR. BEAT
+                TOP 10 : HATE THE EUMESMO
+                TOP 11 : HATE LUCAS
+                TOP 12 : HATE BATAIELA
+                TOP 13 : HATE AFONSO
+                TOP 14 : LOVE MARTA
+                TOP 15 : LOVE GTA 6
+                `),
+            ]
+
+
+            const GameScreen = document.createElement("canvas")
+            const Drawer = GameScreen.getContext()
+            var OldTime = 0
+            var Delta = 0
+
+
+            function Update(currentTime) {
+                Delta = (currentTime - OldTime) / 1000
+                OldTime = currentTime
+
+
+                for (var i = 0; i < Blogs.length; i++) {
+                    const b = Blogs[i]
+                    Drawer.fillText(b.name, 128, 128 + 64 * i)
+                }
+
+
+                requestAnimationFrame(Update)
+            }
+
+
+            requestAnimationFrame(Update)
+        </script>
+    </body>
+</html>
