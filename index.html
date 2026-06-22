@@ -64,10 +64,13 @@
 
 
                 Drawer.fillStyle = "white"
+                Drawer.save()
+                Drawer.scale(4, 4)
                 for (var i = 0; i < Blogs.length; i++) {
                     const b = Blogs[i]
                     Drawer.fillText(b.name, 128, 128 + 64 * i)
                 }
+                Drawer.restore()
 
 
                 requestAnimationFrame(Update)
