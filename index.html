@@ -52,6 +52,11 @@
                 OldTime = currentTime
 
 
+                Drawer.fillStyle = "black"
+                Drawer.clearRect(0, 0, GameScreen.width, GameScreen.height)
+
+
+                Drawer.fillStyle = "white"
                 for (var i = 0; i < Blogs.length; i++) {
                     const b = Blogs[i]
                     Drawer.fillText(b.name, 128, 128 + 64 * i)
